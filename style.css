@@ -17,6 +17,7 @@ body{
    width: 100%;
    max-width: 300px;
    margin: 1em;
+   text-align: center;
 }
 .search{
     display: flex;
@@ -39,9 +40,6 @@ button:hover{
     color: whitesmoke;
     cursor: pointer;
 }
-.weather{
- text-align: center;
-}
 input{
     border-radius: 20px;
     border: none;
@@ -51,4 +49,8 @@ input{
     background-color: #7c7c7c2b;
     color: whitesmoke;
     width: 100%;
+}
+
+#year{
+    margin-bottom: 10px;
 }

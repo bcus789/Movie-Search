@@ -1,39 +1,37 @@
-const cityInput = document.getElementById("city-input")
-const sbmtBtn = document.querySelector(".search-btn")
-let weather = {
-    "apiKey": "5ef8df34b119e7453728c4d5b53d19b2",
-    fetchWeather: function(city){
+const movieInput = document.getElementById("movie-input")
+const searchButton = document.getElementById("search-btn")
+const titleDiv = document.getElementById("title")
+const yearDiv = document.getElementById("year")
+const posterDiv = document.getElementById("poster")
+let movies = {
+    "apiKey": "d5d9d36efa059c70e941563bcafdbf0c",
+    fetchMovies: function(movie){
         fetch(
-        "https://api.openweathermap.org/data/2.5/weather?q=" 
-        + city 
-        + "&units=imperial&appid=" 
+        "https://api.themoviedb.org/3/search/movie?query="
+        + movie +
+        "&api_key=" 
         + this.apiKey
         )
         .then((response) => response.json())
-        .then((data) => this.displayWeather(data)) 
-    },
-    displayWeather: function(data){
-        const {name} = data
-        const {icon, description} = data.weather[0]
-        const {temp, humidity} = data.main
-        const {speed} = data.wind
-        console.log(name,icon,description,temp,humidity,speed)
-        document.querySelector(".city").innerText = name
-        document.querySelector(".temp").innerText = temp
-        document.querySelector(".description").innerText = description
-        document.querySelector(".humidity").innerText = humidity + "%"
-        document.querySelector(".wind").innerText = speed + " mph"
+        .then((data) => this.renderData(data)) 
+    }, 
+    renderData: function(data){
+        console.log(data)
+        const { title } = data.results[0]
+        const { release_date } = data.results[0]
+        const { poster_path } = data.results[0]
+        titleDiv.innerText = "Title: " + title
+        yearDiv.innerText = "Release Date: " + release_date
+        posterDiv.src = "https://image.tmdb.org/t/p/w200" + poster_path
     }
 }
 
+function removeSpace(input){
+    movie = input.replace(/ /g, "+")
+    return movie
+}
 
-
-sbmtBtn.addEventListener("click", function(){
-    weather.fetchWeather(cityInput.value)
+searchButton.addEventListener("click", function(){
+    movies.fetchMovies(removeSpace(movieInput.value))
 })
 
-cityInput.addEventListener("keyup", function(event){
-    if (event.key == "Enter"){
-        weather.fetchWeather(cityInput.value)
-    }
-})
