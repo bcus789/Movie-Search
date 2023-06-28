@@ -4,6 +4,8 @@ const titleDiv = document.getElementById("title")
 const yearDiv = document.getElementById("year")
 const posterDiv = document.getElementById("poster")
 const descriptionDiv = document.getElementById("description")
+const watchlistBtn = document.getElementById("watchlist-button")
+const watchlist = document.getElementById("watchlist")
 let movies = {
     "apiKey": "d5d9d36efa059c70e941563bcafdbf0c",
     fetchMovies: function(movie){
@@ -37,11 +39,18 @@ function removeSpace(input){
 searchButton.addEventListener("click", function(){
     movies.fetchMovies(removeSpace(movieInput.value))
     movieInput.value = ""
+    watchlistBtn.style.display = "inline"
 })
 
 movieInput.addEventListener("keyup", function(event){
     if (event.key == "Enter"){
-        movies.fetchMovies(removeSpace(movieInput.value))
-        movieInput.value = ""
+        event.preventDefault()
+        searchButton.click()
     }
 })
+
+watchlistBtn.addEventListener("click", addMovie)
+
+function addMovie(){
+    watchlist.innerHTML += `<img id="watchlist-poster" src="${posterDiv.src}">`
+}

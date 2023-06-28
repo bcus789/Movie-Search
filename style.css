@@ -1,6 +1,4 @@
 body{
-    display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
@@ -16,7 +14,8 @@ body{
    border-radius: 30px;
    width: 100%;
    max-width: 300px;
-   margin: 1em;
+   margin: auto;
+   margin-top: 50px;
    text-align: center;
 }
 .search{
@@ -57,4 +56,18 @@ input{
 
 #poster{
     margin-bottom: 10px;
+}
+
+#watchlist-button{
+    display: none;
+    margin-top: 10px;
+}
+
+#watchlist{
+   display: inline-flex;
+}
+
+#watchlist-poster{
+    margin: 1em;
+    cursor: pointer;
 }
