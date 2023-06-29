@@ -4,7 +4,14 @@ body{
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     background-color: #222222;
+    text-align: center;
+    color: whitesmoke;
     /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
+}
+
+h2{
+    color: whitesmoke;
+    text-align: center;
 }
 
 .card{
@@ -15,7 +22,7 @@ body{
    width: 100%;
    max-width: 300px;
    margin: auto;
-   margin-top: 50px;
+   margin-top: 30px;
    text-align: center;
 }
 .search{
@@ -64,10 +71,12 @@ input{
 }
 
 #watchlist{
-   display: inline-flex;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
 }
 
-#watchlist-poster{
+.watchlist-poster{
     margin: 1em;
     cursor: pointer;
 }

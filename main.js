@@ -6,6 +6,7 @@ const posterDiv = document.getElementById("poster")
 const descriptionDiv = document.getElementById("description")
 const watchlistBtn = document.getElementById("watchlist-button")
 const watchlist = document.getElementById("watchlist")
+const watchlistPosters = document.querySelectorAll(".watchlist-poster")
 let movies = {
     "apiKey": "d5d9d36efa059c70e941563bcafdbf0c",
     fetchMovies: function(movie){
@@ -31,6 +32,8 @@ let movies = {
     }
 }
 
+watchlist.innerHTML = "No Movies Added Yet"
+
 function removeSpace(input){
     movie = input.replace(/ /g, "+")
     return movie
@@ -52,5 +55,11 @@ movieInput.addEventListener("keyup", function(event){
 watchlistBtn.addEventListener("click", addMovie)
 
 function addMovie(){
-    watchlist.innerHTML += `<img id="watchlist-poster" src="${posterDiv.src}">`
+    if (watchlist.innerHTML === "No Movies Added Yet"){
+        watchlist.innerHTML = ""
+        watchlist.innerHTML += `<img data-title="${titleDiv.innerText}" class="watchlist-poster" src="${posterDiv.src}">`
+    } else {
+        watchlist.innerHTML += `<img data-title="${titleDiv.innerText}" class="watchlist-poster" src="${posterDiv.src}">`
+    }
+    
 }
