@@ -12,6 +12,7 @@ body{
 h2{
     color: whitesmoke;
     text-align: center;
+    margin-top: 20x;
 }
 
 .card{
@@ -74,9 +75,15 @@ input{
    display: flex;
    justify-content: center;
    flex-wrap: wrap;
+   margin-top: 50px;
+   margin-bottom: 50px;
 }
 
 .watchlist-poster{
     margin: 1em;
     cursor: pointer;
+}
+
+#dbl-click{
+    margin-top: -20px;
 }
