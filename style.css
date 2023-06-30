@@ -91,6 +91,7 @@ input{
 
 #dbl-click{
     margin-top: -20px;
+    display: none;
 }
 
 .card::-webkit-scrollbar {

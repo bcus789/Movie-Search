@@ -74,6 +74,7 @@ function addMovie(){
         poster.setAttribute('class', 'watchlist-poster');
         poster.setAttribute('data-title', titleDiv.innerText);
         watchlist.appendChild(poster);
+        document.getElementById("dbl-click").style.display = "inline"
         renderEvent()
     } else {
         const poster = document.createElement("img");
@@ -81,6 +82,7 @@ function addMovie(){
         poster.setAttribute('class', 'watchlist-poster');
         poster.setAttribute('data-title', titleDiv.innerText);
         watchlist.appendChild(poster);
+        document.getElementById("dbl-click").style.display = "inline"
         renderEvent()
     }
     
@@ -96,6 +98,11 @@ function renderEvent() {
       watchlistPosters.forEach(poster => {
         poster.addEventListener('dblclick', function() {
             this.remove()
+            watchlistPosters = document.querySelectorAll(".watchlist-poster")
+            if (watchlist.innerHTML === ""){
+                watchlist.innerHTML = "No Movies Added Yet"
+                document.getElementById("dbl-click").style.display = "none"  
+            }
         })
       })
 }
