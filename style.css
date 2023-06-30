@@ -89,13 +89,14 @@ input{
     margin: auto;
     margin-top: 10px;
     text-align: center;
-    max-height: 330px;
+    max-height: 300px;
     overflow-y:scroll;
 }
 
 .watchlist-poster{
     margin: 1em;
     cursor: pointer;
+    margin-top: -20px;
 }
 
 #dbl-click{
