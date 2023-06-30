@@ -28,6 +28,8 @@ let movies = {
         if (data.results.length === 0){
             titleDiv.innerText = "No movie found by that name."
             posterDiv.innerText = ""
+            posterDiv.src = ""
+            descriptionDiv.innerText = ""
         } else {
         watchlistBtn.style.display = "inline"
         const { title } = data.results[0]

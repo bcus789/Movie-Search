@@ -25,7 +25,12 @@ h2{
    margin: auto;
    margin-top: 30px;
    text-align: center;
+   max-height: 600px;
+   overflow-y:scroll;
 }
+
+
+
 .search{
     display: flex;
     align-items: center;
@@ -87,3 +92,20 @@ input{
 #dbl-click{
     margin-top: -20px;
 }
+
+.card::-webkit-scrollbar {
+    width: 5px;
+    height: 20px;
+  }
+  
+  .card::-webkit-scrollbar-track {
+    background-color: #e4e4e4;
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .card::-webkit-scrollbar-thumb {
+    background-color: #ff2a2a;
+    border-radius: 50px;
+  }
