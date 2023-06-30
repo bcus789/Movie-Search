@@ -12,7 +12,6 @@ body{
 h2{
     color: whitesmoke;
     text-align: center;
-    margin-top: 20x;
 }
 
 .card{
@@ -23,18 +22,21 @@ h2{
    width: 100%;
    max-width: 300px;
    margin: auto;
-   margin-top: 30px;
+   margin-top: 10px;
    text-align: center;
    max-height: 600px;
    overflow-y:scroll;
+   margin-bottom: 30px;
 }
 
 
 
 .search{
-    display: flex;
-    align-items: center;
+    display: inline-flex;
     justify-content: center;
+    width: 300px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
 
 button{
@@ -77,11 +79,15 @@ input{
 }
 
 #watchlist{
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
-   margin-top: 50px;
-   margin-bottom: 50px;
+    background: #000000d0;
+    color: whitesmoke;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .watchlist-poster{
@@ -109,4 +115,8 @@ input{
   .card::-webkit-scrollbar-thumb {
     background-color: #ff2a2a;
     border-radius: 50px;
+  }
+
+  #movie-info{
+    display: none;
   }

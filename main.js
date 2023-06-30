@@ -26,11 +26,13 @@ let movies = {
         yearDiv.innerText = ""
 
         if (data.results.length === 0){
+            watchlistBtn.style.display = "none"
             titleDiv.innerText = "No movie found by that name."
             posterDiv.innerText = ""
             posterDiv.src = ""
             descriptionDiv.innerText = ""
         } else {
+        document.getElementById("movie-info").style.display = "inline"
         watchlistBtn.style.display = "inline"
         const { title } = data.results[0]
         const { release_date } = data.results[0]
