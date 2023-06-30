@@ -75,7 +75,7 @@ function addMovie(){
         poster.setAttribute('src', posterDiv.src);
         poster.setAttribute('class', 'watchlist-poster');
         poster.setAttribute('data-title', titleDiv.innerText);
-        watchlist.appendChild(poster);
+        watchlist.prepend(poster);
         document.getElementById("dbl-click").style.display = "inline"
         renderEvent()
     } else {
@@ -83,7 +83,7 @@ function addMovie(){
         poster.setAttribute('src', posterDiv.src);
         poster.setAttribute('class', 'watchlist-poster');
         poster.setAttribute('data-title', titleDiv.innerText);
-        watchlist.appendChild(poster);
+        watchlist.prepend(poster);
         document.getElementById("dbl-click").style.display = "inline"
         renderEvent()
     }
