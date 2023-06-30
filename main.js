@@ -22,7 +22,7 @@ let movies = {
 
     }, 
     renderData: function(data){
-        console.log(data)
+        // console.log(data)
         yearDiv.innerText = ""
 
         if (data.results.length === 0){
